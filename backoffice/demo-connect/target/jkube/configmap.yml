@@ -1,9 +1,0 @@
-metadata:
-  name: demo-connect
-data:
-  application.properties: |-
-    couchbase.bootstrap-hosts=localhost
-    couchbase.user.name=Administrator
-    couchbase.user.password=password
-    couchbase.bucket.name=travel-sample
-    management.endpoints.web.exposure.include=*
