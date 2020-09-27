@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    api.service.kubernetes.io/path: /hello
+    app.openshift.io/vcs-ref: master
+    jkube.io/git-url: https://github.com/khanium/connect-demo.git
+    app.openshift.io/vcs-uri: https://github.com/khanium/connect-demo.git
+    jkube.io/git-commit: 7a1849b0112ecbe8f4fc371cf8c1affc99d27ab2
+    jkube.io/git-branch: master
+    jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-connect
+    jkube.io/scm-tag: HEAD
+    prometheus.io/port: "9779"
+    prometheus.io/scrape: "true"
+  labels:
+    app: demo-connect
+    provider: jkube
+    version: 1.0-SNAPSHOT
+    group: com.couchbase
+  name: demo-connect
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: demo-connect
+    provider: jkube
+    group: com.couchbase
+  type: LoadBalancer

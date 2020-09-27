@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 public class TaskBoardMember extends User {
-    private static final String DEFAULT_STATUS_COLOR="black";
+    private static final String DEFAULT_STATUS_COLOR="#768797";
     final List<Task> tasks = new ArrayList<>();
 
     public static TaskBoardMember of(User user) {

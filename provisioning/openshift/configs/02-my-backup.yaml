@@ -1,0 +1,11 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseBackup
+metadata:
+  name: my-backup2
+  labels:
+    cluster: cb-demo
+spec:
+  strategy: full_only
+  full:
+    schedule: "0 * * * 0" 
+  size: 5Gi

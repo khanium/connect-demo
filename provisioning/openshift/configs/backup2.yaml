@@ -1,0 +1,59 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: cb-demo
+spec:
+  image: registry.connect.redhat.com/couchbase/server:6.6.0-1
+  platform: gce
+  rbac:
+    managed: true
+  security:
+    adminSecret: cb-demo-auth
+    rbac:
+      managed: true
+  backup:
+    managed: true
+    image: registry.connect.redhat.com/couchbase/operator-backup:latest
+    serviceAccountName: couchbase-backup
+    resources:
+      requests:
+        cpu: 200m
+        memory: 100Mi
+    selector:
+      matchLabels:
+        cluster: cb-demo
+  cluster:
+    clusterName: cb-demo
+    dataServiceMemoryQuota: 1000Mi
+    indexServiceMemoryQuota: 1000Mi
+    searchServiceMemoryQuota: 256Mi
+    eventingServiceMemoryQuota: 256Mi
+    analyticsServiceMemoryQuota: 1Gi
+    indexStorageSetting: plasma
+    autoFailoverTimeout: 10s
+    autoFailoverMaxCount: 3
+    autoFailoverOnDataDiskIssues: true
+    autoFailoverOnDataDiskIssuesTimePeriod: 60s
+    autoFailoverServerGroup: true
+    autoCompaction:
+      databaseFragmentationThreshold:
+        percent: 30
+        size: 1Gi
+      viewFragmentationThreshold:
+        percent: 30
+        size: 1Gi
+      parallelCompaction: false
+      timeWindow:
+        start: 02:00
+        end: 06:00
+        abortCompactionOutsideWindow: true
+      tombstonePurgeInterval: 72h
+  buckets:
+    managed: true
+  servers:
+  - size: 3
+    name: dataquery_services
+    services:
+    - data
+    - index
+    - query

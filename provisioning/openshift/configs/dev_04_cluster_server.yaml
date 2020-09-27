@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cb-demo-auth
+type: Opaque
+data:
+  username: QWRtaW5pc3RyYXRvcg== # Administrator
+  password: cGFzc3dvcmQ=         # password
+---
+# apiVersion: couchbase.com/v2
+# kind: CouchbaseBucket
+# metadata:
+#   name: demo
+#   labels:
+#    cluster: cb-demo
+# spec:
+#  name: demo
+#  memoryQuota: 100Mi
+#  replicas: 1
+#  evictionPolicy: valueOnly
+#  conflictResolution: lww
+#  enableFlush: false
+#  enableIndexReplica: true
+#  compressionMode: passive
+#---
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: cb-demo
+spec:
+  image: registry.connect.redhat.com/couchbase/server:6.6.0-1
+#  antiAffinity: true
+  platform: gce
+#  networking:
+#    exposeAdminConsole: true
+#   adminConsoleServices:
+#    - data
+#    adminConsoleServiceType: NodePort
+#    exposedFeatures: 
+#    - xdcr
+#    exposedFeatureServiceType: NodePort
+#    exposedFeatureTrafficPolicy: Local
+  rbac:
+    managed: true
+  security:
+    adminSecret: cb-demo-auth
+    rbac:
+      managed: true
+  cluster:
+    clusterName: cb-demo
+    dataServiceMemoryQuota: 1000Mi
+    indexServiceMemoryQuota: 1000Mi
+    searchServiceMemoryQuota: 256Mi
+    eventingServiceMemoryQuota: 256Mi
+    analyticsServiceMemoryQuota: 1Gi
+    indexStorageSetting: plasma
+    autoFailoverTimeout: 10s
+    autoFailoverMaxCount: 3
+    autoFailoverOnDataDiskIssues: true
+    autoFailoverOnDataDiskIssuesTimePeriod: 60s
+    autoFailoverServerGroup: true
+    autoCompaction:
+      databaseFragmentationThreshold:
+        percent: 30
+        size: 1Gi
+      viewFragmentationThreshold:
+        percent: 30
+        size: 1Gi
+      parallelCompaction: false
+      timeWindow:
+        start: 02:00
+        end: 06:00
+        abortCompactionOutsideWindow: true
+      tombstonePurgeInterval: 72h
+  buckets:
+    managed: true
+  servers:
+  - size: 3
+    name: dataquery_services
+    services:
+    - data
+    - index
+    - query

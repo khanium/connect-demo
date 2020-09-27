@@ -1,0 +1,162 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    labels:
+      app: demo-connect
+      provider: jkube
+      version: 1.0-SNAPSHOT
+      group: com.couchbase
+    name: ribbon
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      api.service.kubernetes.io/path: /hello
+      app.openshift.io/vcs-ref: master
+      jkube.io/git-url: https://github.com/khanium/connect-demo.git
+      app.openshift.io/vcs-uri: https://github.com/khanium/connect-demo.git
+      jkube.io/git-commit: 7a1849b0112ecbe8f4fc371cf8c1affc99d27ab2
+      jkube.io/git-branch: master
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-connect
+      jkube.io/scm-tag: HEAD
+      prometheus.io/port: "9779"
+      prometheus.io/scrape: "true"
+    labels:
+      app: demo-connect
+      provider: jkube
+      version: 1.0-SNAPSHOT
+      group: com.couchbase
+    name: demo-connect
+  spec:
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: demo-connect
+      provider: jkube
+      group: com.couchbase
+    type: LoadBalancer
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    labels:
+      app: demo-connect
+      provider: jkube
+      version: 1.0-SNAPSHOT
+      group: com.couchbase
+    name: demo-connect
+  data:
+    application.properties: |-
+      couchbase.bootstrap-hosts=localhost
+      couchbase.user.name=Administrator
+      couchbase.user.password=password
+      couchbase.bucket.name=travel-sample
+      management.endpoints.web.exposure.include=*
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: master
+      jkube.io/git-url: https://github.com/khanium/connect-demo.git
+      app.openshift.io/vcs-uri: https://github.com/khanium/connect-demo.git
+      jkube.io/git-commit: 7a1849b0112ecbe8f4fc371cf8c1affc99d27ab2
+      jkube.io/git-branch: master
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-connect
+      jkube.io/scm-tag: HEAD
+    labels:
+      app: demo-connect
+      provider: jkube
+      version: 1.0-SNAPSHOT
+      group: com.couchbase
+    name: demo-connect
+  spec:
+    replicas: 1
+    revisionHistoryLimit: 2
+    selector:
+      app: demo-connect
+      provider: jkube
+      group: com.couchbase
+    strategy:
+      rollingParams:
+        timeoutSeconds: 3600
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          app.openshift.io/vcs-ref: master
+          jkube.io/git-branch: master
+          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-connect
+          jkube.io/git-url: https://github.com/khanium/connect-demo.git
+          app.openshift.io/vcs-uri: https://github.com/khanium/connect-demo.git
+          jkube.io/scm-tag: HEAD
+          jkube.io/git-commit: 7a1849b0112ecbe8f4fc371cf8c1affc99d27ab2
+        labels:
+          app: demo-connect
+          provider: jkube
+          version: 1.0-SNAPSHOT
+          group: com.couchbase
+      spec:
+        containers:
+        - env:
+          - name: KUBERNETES_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          image: demo-connect:latest
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /connect/actuator/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 180
+            successThreshold: 1
+          name: spring-boot
+          ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP
+          - containerPort: 9779
+            name: prometheus
+            protocol: TCP
+          - containerPort: 8778
+            name: jolokia
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /connect/actuator/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 10
+            successThreshold: 1
+          securityContext:
+            privileged: false
+          volumeMounts:
+          - mountPath: /deployments/config
+            name: config
+        serviceAccount: ribbon
+        volumes:
+        - configMap:
+            items:
+            - key: application.properties
+              path: application.properties
+            name: demo-connect
+          name: config
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - spring-boot
+        from:
+          kind: ImageStreamTag
+          name: demo-connect:latest
+      type: ImageChange

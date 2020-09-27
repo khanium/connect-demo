@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app1-user-rbac
+data:
+  password: cGFzc3dvcmQ= # This password is the literal "password". The correctly encoded form can be generated on a "UNIX-like" command line terminal with echo -n 'password' | base64.
+---
+apiVersion: couchbase.com/v2
+kind: CouchbaseUser
+metadata:
+  name: app1-user
+  labels:
+    cluster: cb-demo
+spec:
+  authDomain: local
+  authSecret: app1-user-rbac
+---
+apiVersion: couchbase.com/v2
+kind: CouchbaseGroup
+metadata:
+  name: app1-user-group
+spec:
+  roles:
+  - name: bucket_full_access
+    bucket: demo
+  - name: bucket_full_access
+    bucket: demo_attachments
+---
+apiVersion: couchbase.com/v2
+kind: CouchbaseRoleBinding
+metadata:
+  name: app1-user-rolebinding
+spec:
+  subjects:
+  - kind: CouchbaseUser
+    name: app1-user
+  roleRef:
+    kind: CouchbaseGroup
+    name: app1-user-group
