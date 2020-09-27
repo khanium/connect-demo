@@ -74,6 +74,7 @@ echo '[1/7] login oc cluster...'
 oc login -u $OC_ADMIN_USER -p $OC_ADMIN_PASSWORD $OC_API_ADDRESS
 
 # 2. Checking Previous Installations
+echo ''
 echo '[2/7] checking previous installations...'
 CRD=$(oc get crd couchbasebuckets.couchbase.com | grep couchbasebuckets.couchbase.com)
 if [[ $CRD != couchbasebuckets.couchbase.com* ]]; then
@@ -103,6 +104,7 @@ db_ns="dev-$dev-couchbase"
 app_ns="dev-$dev-apps"
 
 echo "projects: $projects"
+echo ''
 echo "[3/7] create development [$db_ns, $app_ns] project..."
 echo "   - project: $db_ns"
 oc create namespace $db_ns
@@ -112,6 +114,7 @@ oc project $db_ns
 
 
 # 4. Deploying Couchbase Operator
+echo ''
 echo '[4/7] deploying Couchbase operator...'
 $CAO_VERSION/bin/cbopcfg --no-admission --image-pull-secret rh-catalog --namespace $db_ns | oc create -n $db_ns -f -
 
@@ -126,6 +129,7 @@ done
 oc get deployments
 
 # 5. Deploying Couchbase Cluster Server
+echo ''
 echo '[5/7] deploying Couchbase cluster...'
 
 echo '   - Creating application buckets '
@@ -159,6 +163,7 @@ oc get pods
 echo ""
 
 # 6. Deploying Applications
+echo ''
 echo '[6/7] deploying Applications...'
 
 current_dir=$(echo $PWD)
@@ -179,6 +184,7 @@ oc project $db_ns
 if [ "$MOBILE_ENABLED" = true ]; then
 
    # 7. Deploying Mobile 
+   echo ''
    echo '[7/7] deploying Mobile Servers/Services...'
 
    oc create -f configs/dev_05_sync_gateway.yaml
