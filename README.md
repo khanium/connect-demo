@@ -1,4 +1,4 @@
-# Why Couchbase Is the Best NoSQL Option for Red Hat OpenShift openshift+couchbase** 
+# Why Couchbase Is the Best NoSQL Option for Red Hat OpenShift openshift+couchbase
 
 ![title logo](assets/logo.png)
 
