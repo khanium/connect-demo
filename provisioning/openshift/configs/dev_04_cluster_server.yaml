@@ -7,39 +7,13 @@ data:
   username: QWRtaW5pc3RyYXRvcg== # Administrator
   password: cGFzc3dvcmQ=         # password
 ---
-# apiVersion: couchbase.com/v2
-# kind: CouchbaseBucket
-# metadata:
-#   name: demo
-#   labels:
-#    cluster: cb-demo
-# spec:
-#  name: demo
-#  memoryQuota: 100Mi
-#  replicas: 1
-#  evictionPolicy: valueOnly
-#  conflictResolution: lww
-#  enableFlush: false
-#  enableIndexReplica: true
-#  compressionMode: passive
-#---
 apiVersion: couchbase.com/v2
 kind: CouchbaseCluster
 metadata:
   name: cb-demo
 spec:
   image: registry.connect.redhat.com/couchbase/server:6.6.0-1
-#  antiAffinity: true
-  platform: gce
-#  networking:
-#    exposeAdminConsole: true
-#   adminConsoleServices:
-#    - data
-#    adminConsoleServiceType: NodePort
-#    exposedFeatures: 
-#    - xdcr
-#    exposedFeatureServiceType: NodePort
-#    exposedFeatureTrafficPolicy: Local
+#  antiAffinity: true 
   rbac:
     managed: true
   security:
@@ -53,8 +27,8 @@ spec:
     searchServiceMemoryQuota: 256Mi
     eventingServiceMemoryQuota: 256Mi
     analyticsServiceMemoryQuota: 1Gi
-    indexStorageSetting: plasma
-    autoFailoverTimeout: 10s
+    indexStorageSetting: memory_optimized
+    autoFailoverTimeout: 30s
     autoFailoverMaxCount: 3
     autoFailoverOnDataDiskIssues: true
     autoFailoverOnDataDiskIssuesTimePeriod: 60s
@@ -80,4 +54,4 @@ spec:
     services:
     - data
     - index
-    - query
+    - query 
