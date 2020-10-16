@@ -20,11 +20,12 @@ Red Hat’s leadership in the container orchestration space with OpenShift mirro
 
 ![overview](assets/overview-laptop.png)
 
+
 ### Infraestructure:
 
 | Technology | Version | Description |
 | :-- | :-- | :-- |
-| OpenShift Client | 1.6 | The OpenShift CLI exposes commands for managing your applications, as well as lower level tools to interact with each component of your system.  |
+| OpenShift Client | 1.16 | The OpenShift CLI exposes commands for managing your applications, as well as lower level tools to interact with each component of your system.  |
 | OpenShift CRC | 1.9 |Red Hat CodeReady Containers brings a minimal OpenShift 4 cluster to your local computer. This cluster provides a minimal environment for development and testing purposes. CodeReady Containers is mainly targeted at running on developers' desktops. |
 
 
@@ -43,10 +44,9 @@ Alternatively, you can create your cloud OpenShift (or Kubernetes EKS, GKE, AKS)
 
 | Technology/Framework | Version | Description |
 | :-- | :-- | :-- |
-| Springboot | | |
-| Spring Couchbase data | | |
-| Spring  | | |
-| JKube | | |
+| [Springboot](https://spring.io/projects/spring-boot) | 2.3.4.RELEASE | Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".|
+| [Spring Couchbase data](https://spring.io/projects/spring-data-couchbase) | 4.0.2 | Spring Data for Couchbase is part of the umbrella Spring Data project which aims to provide a familiar and consistent Spring-based programming model for new datastores while retaining store-specific features and capabilities. The Spring Data Couchbase project provides integration with the Couchbase Server database. | 
+| [Maven JKube Plugin](https://www.eclipse.org/jkube/) | 1.0.0 | Eclipse JKube is a collection of plugins and libraries that are used for building container images using Docker, JIB or S2I build strategies. Eclipse JKube generates and deploys Kubernetes/OpenShift manifests at compile time too.It brings your Java applications on to Kubernetes and OpenShift by leveraging the tasks required to make your application cloud-native.|
 
 ### Repository Folder Structure:
 
