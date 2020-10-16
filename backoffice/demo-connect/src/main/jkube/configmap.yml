@@ -2,7 +2,7 @@ metadata:
   name: ${project.artifactId}
 data:
   application.properties: |-
-    couchbase.bootstrap-hosts=cb-demo-0000.dev-001-couchbase.svc
+    couchbase.bootstrap-hosts=cb-demo-0000.cb-demo.dev-001-couchbase.svc
     couchbase.user.name=Administrator
     couchbase.user.password=password
     couchbase.bucket.name=demo

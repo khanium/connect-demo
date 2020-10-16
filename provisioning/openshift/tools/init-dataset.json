@@ -1,0 +1,162 @@
+[
+  {
+      "assignTo": "steffen",
+      "channels": [
+        "steffen"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-10-20",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:tam:reminder1"
+  },
+  {
+      "assignTo": "jmolina",
+      "channels": [
+        "jmolina"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-10-20",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer2",
+      "type": "VISIT",
+    "id": "task:tam:reminder2"
+  },
+  {
+      "assignTo": "raul",
+      "channels": [
+        "raul"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-10-20",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:tam:reminder3"
+  },
+  {
+      "assignTo": "jmolina",
+      "channels": [
+        "jmolina"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-10-20",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:tam:reminder4"
+  },
+  {
+      "assignTo": "steffen",
+      "channels": [
+        "steffen"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-10-20",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:tam:reminder5"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:test:test_0"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:test:test_1"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:test:test_10"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:test:test_11"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer",
+      "type": "VISIT",
+    "id": "task:test:test_12"
+  }
+]

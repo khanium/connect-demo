@@ -1,0 +1,219 @@
+[
+  {
+      "assignTo": "steffen",
+      "channels": [
+        "steffen"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2021-10-20",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer1",
+      "type": "VISIT",
+    "id": "task:tam:reminder1"
+  },
+  {
+      "assignTo": "jmolina",
+      "channels": [
+        "jmolina"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-12-25",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer2",
+      "type": "VISIT",
+    "id": "task:tam:reminder2"
+  },
+  {
+      "assignTo": "raul",
+      "channels": [
+        "raul"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-10-18",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer3",
+      "type": "VISIT",
+    "id": "task:tam:reminder3"
+  },
+  {
+      "assignTo": "jmolina",
+      "channels": [
+        "jmolina"
+      ],
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-11-11",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer4",
+      "type": "VISIT",
+    "id": "task:tam:reminder4"
+  },
+  {
+      "assignTo": "steffen",
+      "channels": [
+        "steffen"
+      ],
+      "createdAt": "2020-07-20",
+      "createdBy": "jmolina",
+      "description": "Visit your beloved customer",
+      "dueDate": "2020-12-24",
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "status": "DONE",
+      "supervisedBy": "jmolina",
+      "title": "Visit Customer5",
+      "type": "VISIT",
+    "id": "task:tam:reminder5"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer6",
+      "type": "VISIT",
+    "id": "task:test:test_0"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer7",
+      "type": "VISIT",
+    "id": "task:test:test_1"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer8",
+      "type": "VISIT",
+    "id": "task:test:test_10"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer9",
+      "type": "VISIT",
+    "id": "task:test:test_11"
+  },
+  {
+      "LastModifiedBy": "test",
+      "createdAt": 1597874400000,
+      "createdBy": "test",
+      "description": "Visit your beloved customer",
+      "dueDate": 1603144800000,
+      "javaClass": "com.couchbase.demo.tasks.Task",
+      "lastModifiedAt": 1599084000000,
+      "status": "QUEUED",
+      "supervisedBy": "test_user",
+      "title": "Visit Customer10",
+      "type": "VISIT",
+    "id": "task:test:test_12"
+  },
+  {
+      "avatar": "avatar2",
+      "channels": [
+        "private_jmolina"
+      ],
+      "color": "#F39C12",
+      "createdAt": "2020-08-20",
+      "createdBy": "stevecoombs",
+      "displayname": "Jose Molina",
+      "firstname": "Jose",
+      "id": "jmolina",
+      "javaClass": "com.couchbase.demo.users.User",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "lastname": "Molina",
+      "supervisedBy": "stevecoombs",
+      "username": "jmolina",
+    "id": "user:app:jmolina"
+  },
+  {
+      "avatar": "avatar1",
+      "channels": [
+        "private_raul"
+      ],
+      "color": "green",
+      "createdAt": "2020-08-20",
+      "createdBy": "chrisb",
+      "displayname": "Raul",
+      "firstname": "Raul",
+      "id": "raul",
+      "javaClass": "com.couchbase.demo.users.User",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "lastname": "",
+      "supervisedBy": "jmolina",
+      "username": "raul",
+    "id": "user:app:raul"
+  },
+  {
+      "avatar": "avatar3",
+      "channels": [
+        "private_steffen"
+      ],
+      "color": "#3498DB",
+      "createdAt": "2020-08-20",
+      "createdBy": "jmolina",
+      "displayname": "Steffen",
+      "firstname": "Steffen",
+      "id": "steffen",
+      "javaClass": "com.couchbase.demo.users.User",
+      "lastModifiedAt": "2020-09-03",
+      "lastModifiedBy": "jmolina",
+      "lastname": "",
+      "supervisedBy": "jmolina",
+      "username": "steffen",
+    "id": "user:app:steffen"
+  }
+]

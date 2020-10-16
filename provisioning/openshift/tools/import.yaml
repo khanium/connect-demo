@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: import
+spec:
+  template:
+    spec:
+      containers:
+      - name: import
+        image: import:1.0.0
+        command:
+        - cbimport
+        - csv
+        - --cluster
+        - couchbase://cb-example-srv.default.svc:8091
+        - --bucket
+        - default
+        - --username
+        - Administrator
+        - --password
+        - password
+        - --dataset
+        - file:///var/lib/data/init-dataset.csv
+        - --generate-key
+        - '#UUID#'
+      restartPolicy: Never

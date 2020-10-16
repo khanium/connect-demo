@@ -2,10 +2,12 @@ package com.couchbase.demo.users;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.couchbase.core.mapping.Document;
 
 import java.time.LocalDate;
 
 
+@Document
 @Data
 public class User {
 
