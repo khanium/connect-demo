@@ -31,7 +31,7 @@ Red Hat’s leadership in the container orchestration space with OpenShift mirro
 
 ![overview](assets/overview.png)
 
-Alternatively, you can create your cloud OpenShift (or Kubernetes EKS, GKE, AKS) cluster into the main three Clouds project.
+Alternatively, you can deploy Couchbase into your favorite OpenShift cloud (or Kubernetes EKS, GKE, AKS).
 
 ### Database Version:
 
