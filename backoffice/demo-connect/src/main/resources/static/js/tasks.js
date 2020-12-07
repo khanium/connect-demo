@@ -140,8 +140,6 @@ async function load() {
 async function load_board(board) {
     //TODO load data here
     let supervisor_id = 'jmolina';
-/*    let response = await fetch('/connect/board/'+supervisor_id);
-    board_data = await response.json();*/
     board_data = await fetch_board(supervisor_id);
     console.log('Board data: '+board_data);
     board_data.forEach( m => add_column(board, m));
@@ -155,7 +153,15 @@ async function fetch_board(supervisor_id) {
 function add_task(column, task){
     column.innerHTML = column.innerHTML+ '<article class="card" draggable="true" ondragstart="drag(event)" data-id="'+task.id+'">'+
                     ' <h5>'+task.title+'</h5>' +
-                    ' <p>'+task.dueDate+'</p>'+
+                    ' <footer class="card-footer">'+
+                    '   <div class="row">'+
+                    '     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-x" fill="red" xmlns="http://www.w3.org/2000/svg">\n' +
+                    '       <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>\n' +
+                    '       <path fill-rule="evenodd" d="M6.146 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>\n' +
+                    '     </svg>   ' +
+                    '     <p>     '+task.dueDate+'</p>'+
+                    '   </div>'+
+                    ' </footer>'+
                     '</article>';
 }
 

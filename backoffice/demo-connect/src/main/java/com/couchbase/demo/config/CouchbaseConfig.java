@@ -60,6 +60,11 @@ public class CouchbaseConfig extends AbstractCouchbaseConfiguration {
     }
 
     @Override
+    protected boolean autoIndexCreation() {
+        return true;
+    }
+
+    @Override
     public String typeKey(){
         return MappingCouchbaseConverter.TYPEKEY_SYNCGATEWAY_COMPATIBLE;
     }

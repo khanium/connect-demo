@@ -1,6 +1,6 @@
 
 metadata:
   annotations:
-    api.service.kubernetes.io/path: /hello
+    api.service.kubernetes.io/path: /connect
 spec:
   type: LoadBalancer

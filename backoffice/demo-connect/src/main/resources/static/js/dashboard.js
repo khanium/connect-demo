@@ -292,19 +292,22 @@ document.addEventListener('DOMContentLoaded', function () {
             text: null
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: ['Completed Tasks', 'Customer Satisfaction', 'Delivery Time']
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: 'Qualifications'
             }
         },
         series: [{
-            name: 'Jane',
+            name: 'Jose',
             data: [1, 0, 4]
         }, {
-            name: 'John',
+            name: 'Raul',
             data: [5, 7, 3]
+        }, {
+            name: 'Steffen',
+            data: [0, 9, 2]
         }]
     });
     var myPieChart = Highcharts.chart('tasks_by_type', {
@@ -336,24 +339,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         series: [{
-            name: 'Brands',
+            name: 'Types',
             colorByPoint: true,
             data: [{
-                name: 'Chrome',
+                name: 'Consulting',
                 y: 61.41,
                 sliced: true,
                 selected: true
             }, {
-                name: 'Internet Explorer',
+                name: 'Email',
                 y: 11.84
             }, {
-                name: 'Firefox',
+                name: 'Calls',
                 y: 10.85
             }, {
-                name: 'Edge',
+                name: 'Sales',
                 y: 4.67
             }, {
-                name: 'Safari',
+                name: 'Support',
                 y: 4.18
             }, {
                 name: 'Other',

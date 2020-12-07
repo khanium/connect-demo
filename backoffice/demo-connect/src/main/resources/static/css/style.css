@@ -7,17 +7,27 @@
 }
 
 .card {
-    background: #aba7a7;
-    padding: 10px;
+    background: #000000;
+    padding: 10px 10px 0px;
     margin-bottom: 10px;
     border-radius: 3px;
     cursor: pointer;
-    width: 150px;
-    height: 60px;
+    width: 180px;
+    height: 80px;
     cursor: grab;
     transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
     column-rule-color: #ff0000;
     column-rule-width: medium;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(208, 208, 208, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(208, 208, 208,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(208, 208, 208,0.75);
+}
+
+.card-footer {
+    align-self: flex-end;
+    flex: 0 0 auto;
+    align-content: baseline;
+    justify-content: right;
 }
 
 .card h5 {
@@ -27,10 +37,12 @@
 }
 
 .card p {
-    font-size: 10px;
-    margin: 0;
+    font-size: 11px;
+    margin: 0 0 0 10px;
+    alignment-baseline: bottom;
     justify-content: right;
-    color: #921b1b;
+    align-content: baseline;
+    color: #ff2121;
 }
 
 .card:active {
@@ -45,7 +57,7 @@
 .column {
     padding: 10px;
     background: #ffffff;
-    border: 2px solid #f6f6f6;
+    border: 2px solid #ffffff;
     transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -54,11 +66,11 @@
 }
 
 .column.column-unassigned {
-    background: #d2d2d2;
+    background: #ffffff;
 }
 
 .column.column-done {
-     background: #d2d2d2;
+     background: #ffffff;
  }
 
 .column.column-ip h2 {
@@ -81,6 +93,7 @@ h3 {
     font-size: 16px;
     font-family: Helvetica;
     margin: 0;
+    color: #FFFFFF;
 }
 
 .card:last-child {
